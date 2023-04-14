@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+
+<form>
+  <label for="date">Датум ОД</label><br>
+  <input type="date" name="date_from" id="date_from" {% if hive_id != None %} value="{{ date_from }}" {% endif %} required /><br><br>
+  <label for="date">Датум ДО</label><br>
+  <input type="date" name="date_to" id="date_to" {% if hive_id != None %} value="{{ date_to }}" {% endif %} required /><br><br>
+  <input type="submit" value="Прикажи" />  
+</form>
+
+{% if review != None %}
+<br />
+<table class="nice-table">	
+  <tr>
+    <th width="15%">Датум</th><th width="5%">К БР</th><th width="80%">Преглед</th>
+  </tr>
+  {% for (date, hive_id, note) in review %}
+    <tr>
+      <td>{{ date }}</td><td>{{ hive_id }}</td><td>{{ note }}</td>
+    </tr>
+  {% endfor %} 
+</table>	
+{% endif %}	
+
+{% endblock content %}

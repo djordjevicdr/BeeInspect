@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<h1>Упис прегледа у базу</h1>
+<form method="POST">
+  <label for="date">Датум прегледа</label><br>
+  <input type="date" name="date" id="date" required><br><br>
+  <label for="hive_id">Број кошнице</label><br>
+  <input type="text" name="hive_id" id="hive_id" required><br><br>
+  <label for="note">Опис прегледа</label><br>
+  <textarea name="note" id="note" rows="10" cols="100" required></textarea>
+  <br>
+  <input type="submit" value="Упиши податке">
+</form>
+
+{% if msg %}
+<h2>{{msg}}</h2>
+{% endif %}
+
+{% endblock content %}

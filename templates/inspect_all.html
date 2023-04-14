@@ -1,0 +1,20 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+  {% if naslov %}
+    <h1>{{naslov}}</h1>
+  {% endif%}
+		
+	<table class="nice-table">	
+		<tr>
+			<th width="15%">Датум</th><th width="5%">К БР</th><th width="80%">Преглед</th>
+		</tr>
+		{% for (date, hive_id, observation) in review %}
+			<tr>
+				<td>{{ date }}</td><td>{{ hive_id }}</td><td>{{ observation }}</td>
+			</tr>
+		{% endfor %} 
+	</table>		
+
+{% endblock content %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/nice_table.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Python - Flask - Server - Web</h1>
+</div>
+
+<!-- Navigation Bar -->
+<div class="topnav" id="myTopnav">
+    <a href="/" class="active"><i class="fa fa-home"></i></a>
+    <a href="/inspect_add">Преглед нови</a>
+    <a href="/inspect_all">Прегледи сви</a>
+    <a href="/inspect_by_id">Прегледи ID</a>
+    <a href="/inspect_by_date">Прегледи Од-До</a> 
+    <a href="#about">About Me</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()"><i id="fa-btn" class="fa fa-bars" style="font-weight: 900;"></i></a>   
+</div>
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  
+  <div class="main">
+    {% block content %}
+    {% endblock content %}
+  </div>
+
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <ul class="social">
+    <li><a href="https://www.facebook.com/ssvedurs" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i><span class="notranslate">Facebook</span></a></li>
+    <li><a href="http://www.twitter.com/ssvedurs" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i><span class="notranslate">Twiter</span></a></li>
+    <li><a href="https://www.instagram.com/dobra_srednja_skola/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span class="notranslate">Instagram</span></a></li>    
+    <li style="margin-right: 0 !important;"><a href="http://www.youtube.com/user/ssvedurs" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i><span class="notranslate">YouTube</span></a></li>
+  </ul>	
+  <div style="margin: 20px 10px auto">
+    <i class="fa fa-copyright" aria-hidden="true" style="margin-right: 15px;"></i>Средња школа Варварин - Сва права задржана 2023 Powered By <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=djordjevicdr@gmail.com" target="_blank" style="color: #a00000">djordjevicdr</a>
+  </div> 	
+</div>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+</script>
+
+</body>
+</html>
+
+

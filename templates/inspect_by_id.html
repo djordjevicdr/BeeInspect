@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<form>
+  <label for="hive_id">Кошница бр.</label>
+  <input type="text" name="hive_id" id="hive_id" {% if hive_id != None %} value="{{ hive_id }}" {% endif %} /> 
+  <input type="submit" value="Прикажи" />
+</form>
+
+{% if review != None %}
+  <br>
+  <br>
+  <p><b>Кошница БР. {{ hive_id }}</b></p>
+  <br>
+  {% for (date, hive_id, observation) in review %}    
+    <p style="color: #336699">{{ date }}</p>
+    <p>{{ observation }}</p>  
+    <br>  
+  {% endfor %}
+{% endif %}	
+
+{% endblock content %}
