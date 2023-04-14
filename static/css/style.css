@@ -18,8 +18,13 @@ p {
 .header {
   padding: 20px;
   text-align: center;
-  background: #1abc9c;
+  background: #fab71e;;
   color: white;
+}
+
+.header h1 {
+    color: #c7dbff;
+    text-shadow: 1px 1px #000000;
 }
 
 /* Style the top navigation bar */
