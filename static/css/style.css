@@ -208,6 +208,12 @@ p {
   }
 }
 
+.shema {
+  display:flex; 
+  flex-direction: row; 
+  flex-wrap: wrap;  
+}
+
 @media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -227,16 +233,19 @@ p {
     width: 100%;
     text-align: left;
   }
+  .shema {flex-direction: column;}
 }
 
 /* table */
-table.shema {
-  border-spacing: 10px;
+table.tshema {
+  border-collapse: separate;
+  border-spacing: 10px 40px;    
   width: 100%;
 }
 
-table.shema td {
+table.tshema td {
   border: 1px solid black;  
   padding: 10px;  
   text-align: center;
+  border-spacing: 20px;
 }
