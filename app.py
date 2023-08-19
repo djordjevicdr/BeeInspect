@@ -67,6 +67,27 @@ def inspect_by_id():
         rew=cur.fetchall()    
         con.close()        
         return render_template("inspect_by_id.html", hive_id=hive_id, review=rew)
+
+@app.route("/shema")
+def shema():
+    db = os.path.join(app.root_path, 'pcelinjak.db')
+    con = sqlite3.connect(db)    
+    cur = con.cursor()
+
+    hive_id = request.args.get("hive_id")     
+
+    if hive_id == None:
+        return render_template("shema.html", hive_id=None, review=None)
+    else:
+        sql="""
+        SELECT date, hive_id, note
+        FROM inspect   
+        WHERE hive_id=?
+        """
+        cur.execute(sql, (hive_id,))
+        rew=cur.fetchall()    
+        con.close()        
+        return render_template("shema.html", hive_id=hive_id, review=rew)
     
 @app.route("/inspect_by_date")
 def inspect_by_date():
