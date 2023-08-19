@@ -24,6 +24,29 @@ def inspect_all():
     nasl="Прегледи"
     return render_template("inspect_all.html", naslov=nasl, review=rew)
 
+@app.route("/inspect_last")
+def inspect_last():
+    db = os.path.join(app.root_path, 'pcelinjak.db')
+    con = sqlite3.connect(db)    
+    cur = con.cursor()  
+    
+    sql="""
+    SELECT date, hive_id, note
+    FROM inspect
+    WHERE id IN 
+	    (
+	    SELECT MAX(id)
+        FROM inspect
+        GROUP BY hive_id
+	    )
+    ORDER BY hive_id
+    """
+    cur.execute(sql)
+    rew=cur.fetchall()    
+    con.close()
+    nasl="Последњи преглед"
+    return render_template("inspect_all.html", naslov=nasl, review=rew)
+
 @app.route("/inspect_by_id")
 def inspect_by_id():
     db = os.path.join(app.root_path, 'pcelinjak.db')
@@ -65,7 +88,7 @@ def inspect_by_date():
         cur.execute(sql, (date_from, date_to))
         rew=cur.fetchall()    
         con.close()        
-        return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=rew)    
+        return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=rew)
 
 @app.route("/inspect_add", methods=["GET", "POST"])
 def inspect_add():  
