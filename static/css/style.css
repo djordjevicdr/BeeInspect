@@ -18,8 +18,13 @@ p {
 .header {
   padding: 20px;
   text-align: center;
-  background: #1abc9c;
+  background: #fab71e;;
   color: white;
+}
+
+.header h1 {
+    color: #c7dbff;
+    text-shadow: 1px 1px #000000;
 }
 
 /* Style the top navigation bar */
@@ -203,6 +208,12 @@ p {
   }
 }
 
+.shema {
+  display:flex; 
+  flex-direction: row; 
+  flex-wrap: wrap;  
+}
+
 @media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -222,4 +233,19 @@ p {
     width: 100%;
     text-align: left;
   }
+  .shema {flex-direction: column;}
+}
+
+/* table */
+table.tshema {
+  border-collapse: separate;
+  border-spacing: 10px 40px;    
+  width: 100%;
+}
+
+table.tshema td {
+  border: 1px solid black;  
+  padding: 10px;  
+  text-align: center;
+  border-spacing: 20px;
 }
