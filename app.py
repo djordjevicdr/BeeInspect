@@ -31,15 +31,16 @@ def inspect_last():
     cur = con.cursor()  
     
     sql="""
-    SELECT date, hive_id, note
-    FROM inspect
-    WHERE id IN 
-	    (
-	    SELECT MAX(id)
+    SELECT I.hive_id, I.note, I.date
+    FROM inspect AS I
+    JOIN
+    (
+        SELECT hive_id, MAX(date) ldate
         FROM inspect
         GROUP BY hive_id
-	    )
-    ORDER BY hive_id
+    ) as M
+    ON I.hive_id = M.hive_id AND I.date = M.ldate
+    ORDER BY    I.hive_id
     """
     cur.execute(sql)
     rew=cur.fetchall()    
