@@ -1,6 +1,7 @@
 {% extends 'template.html' %}
 
 {% block content %}
+{% autoescape off %}
 
   {% if naslov %}
     <h1>{{naslov}}</h1>
@@ -15,4 +16,5 @@
     <br />
 	{% endfor %}	
 
+{% endautoescape %}
 {% endblock content %}
