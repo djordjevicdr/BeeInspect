@@ -31,7 +31,7 @@ def inspect_last():
     cur = con.cursor()  
     
     sql="""
-    SELECT I.hive_id, I.note, I.date
+    SELECT I.hive_id, I.date, I.note
     FROM inspect AS I
     JOIN
     (
@@ -46,7 +46,7 @@ def inspect_last():
     rew=cur.fetchall()    
     con.close()
     nasl="Последњи преглед"
-    return render_template("inspect_all.html", naslov=nasl, review=rew)
+    return render_template("inspect_last.html", naslov=nasl, review=rew)
 
 @app.route("/inspect_by_id")
 def inspect_by_id():

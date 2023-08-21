@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+  {% if naslov %}
+    <h1>{{naslov}}</h1>
+  {% endif%}
+		
+
+	{% for (hive_id, date,  observation) in review %}
+		<b>{{ hive_id }}</b><br />
+		{{ date }}<br />
+    {{ observation }}
+		<br />
+    <br />
+	{% endfor %}	
+
+{% endblock content %}
