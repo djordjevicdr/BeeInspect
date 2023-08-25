@@ -123,7 +123,7 @@ def inspect_add():
             cur = con.cursor()
 
             sql="""
-            INSERT INTO inspect (date, hive_id, note)
+            INSERT INTO inspect (date, hive_id, state, interv, frames, note)
             VALUES(?,?,?)
             """            
             date = request.form['date']
