@@ -5,9 +5,9 @@
 
 <form>
   <label for="date">Датум ОД</label><br>
-  <input type="date" name="date_from" id="date_from" {% if hive_id != None %} value="{{ date_from }}" {% endif %} required /><br><br>
+  <input type="date" name="date_from" id="date_from" {% if hive_id != None %} value="{{ date_from }}" {% else %} value="01.01.2023" {% endif %} required /><br><br>
   <label for="date">Датум ДО</label><br>
-  <input type="date" name="date_to" id="date_to" {% if hive_id != None %} value="{{ date_to }}" {% endif %} required /><br><br>
+  <input type="date" name="date_to" id="date_to" {% if hive_id != None %} value="{{ date_to }}" {% else %} value="01.09.2023" {% endif %} required /><br><br>
   <input type="submit" value="Прикажи" />  
 </form>
 
