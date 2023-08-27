@@ -63,6 +63,7 @@ def inspect_by_id():
         SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE hive_id=?
+        ORDER BY date DESC
         """
         cur.execute(sql, (hive_id,))
         rew=cur.fetchall()    
@@ -100,7 +101,9 @@ def inspect_by_date():
     date_to = request.args.get("date_to")
 
     if (date_from == None) or (date_to == None):
-        return render_template("inspect_by_date.html", date_from=None, review=None)
+        date_from = "2023-01-01"
+        date_to = "2023-09-01"
+        return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=None)
     else:
         sql="""
         SELECT date, hive_id, state, interv, frames, note
