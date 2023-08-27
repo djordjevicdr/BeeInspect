@@ -8,10 +8,13 @@
   {% endif%}
 		
 
-	{% for (hive_id, date,  observation) in review %}
-		<b>{{ hive_id }}</b><br />
-		{{ date }}<br />
-    {{ observation }}
+	{% for (date, hive_id, state, interv, frames, note) in review %}
+		<p>{{ hive_id }}</p>
+		<p style="color: #336699">{{ date }}</p>
+    <p>{{ state }}</p>  
+    <p>{{ interv }}</p>
+    <p>{{ frames }}</p>
+    <p>{{ note }}</p>
 		<br />
     <br />
 	{% endfor %}	

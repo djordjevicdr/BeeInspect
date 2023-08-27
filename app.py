@@ -14,7 +14,7 @@ def inspect_all():
     cur = con.cursor()  
     
     sql="""
-    SELECT date, hive_id, note
+    SELECT date, hive_id, state, interv, frames, note
     FROM inspect   
     ORDER BY date DESC
     """
@@ -31,7 +31,7 @@ def inspect_last():
     cur = con.cursor()  
     
     sql="""
-    SELECT I.hive_id, I.date, I.note
+    SELECT I.hive_id, I.date, I.state, I.interv, I.frames, I.note
     FROM inspect AS I
     JOIN
     (
@@ -60,7 +60,7 @@ def inspect_by_id():
         return render_template("inspect_by_id.html", hive_id=None, review=None)
     else:
         sql="""
-        SELECT date, hive_id, note
+        SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE hive_id=?
         """
@@ -81,7 +81,7 @@ def shema():
         return render_template("shema.html", hive_id=None, review=None)
     else:
         sql="""
-        SELECT date, hive_id, note
+        SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE hive_id=?
         """
@@ -103,7 +103,7 @@ def inspect_by_date():
         return render_template("inspect_by_date.html", hive_id=None, review=None)
     else:
         sql="""
-        SELECT date, hive_id, note
+        SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE date BETWEEN ? and ?
         """
@@ -124,13 +124,16 @@ def inspect_add():
 
             sql="""
             INSERT INTO inspect (date, hive_id, state, interv, frames, note)
-            VALUES(?,?,?)
+            VALUES(?,?,?,?,?)
             """            
             date = request.form['date']
             hive_id = request.form['hive_id']
-            note = request.form['note']          
+            state = request.form['state']
+            interv = request.form['interv']
+            frames = request.form['frames']
+            note = request.form['note']        
 
-            cur.execute(sql, (date, hive_id, note))
+            cur.execute(sql, (date, hive_id, state, interv, frames, note))
             con.commit()
             _msg="Успешан упис"
             return render_template("inspect_add.html", msg=_msg)     
