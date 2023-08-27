@@ -1,6 +1,7 @@
 import os
 import sqlite3
 from flask import Flask, render_template, request
+from datetime import datetime
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 @app.route("/")
@@ -100,9 +101,9 @@ def inspect_by_date():
     date_from = request.args.get("date_from")
     date_to = request.args.get("date_to")
 
-    if (date_from == None) or (date_to == None):
+    if (date_from == None) or (date_to == None):        
         date_from = "2023-01-01"
-        date_to = "2023-09-01"
+        date_to = datetime.date.today()
         return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=None)
     else:
         sql="""
