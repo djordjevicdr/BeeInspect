@@ -100,7 +100,7 @@ def inspect_by_date():
     date_to = request.args.get("date_to")
 
     if (date_from == None) or (date_to == None):
-        return render_template("inspect_by_date.html", hive_id=None, review=None)
+        return render_template("inspect_by_date.html", date_from=None, review=None)
     else:
         sql="""
         SELECT date, hive_id, state, interv, frames, note

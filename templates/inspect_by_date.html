@@ -5,9 +5,9 @@
 
 <form>
   <label for="date">Датум ОД</label><br>
-  <input type="date" name="date_from" id="date_from" {% if date != None %} value="{{ date_from }}" {% else %} value="2023-01-01" {% endif %} required /><br><br>
+  <input type="date" name="date_from" id="date_from" {% if date_from != None %} value="{{ date_from }}" {% else %} value="2023-01-01" {% endif %} required /><br><br>
   <label for="date">Датум ДО</label><br>
-  <input type="date" name="date_to" id="date_to" {% if date != None %} value="{{ date_to }}" {% else %} value="2023-09-01" {% endif %} required /><br><br>
+  <input type="date" name="date_to" id="date_to" {% if date_from != None %} value="{{ date_to }}" {% else %} value="2023-09-01" {% endif %} required /><br><br>
   <input type="submit" value="Прикажи" />  
 </form>
 
