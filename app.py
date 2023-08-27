@@ -101,8 +101,9 @@ def inspect_by_date():
     date_from = request.args.get("date_from")
     date_to = request.args.get("date_to")
 
-    if (date_from == None) or (date_to == None):        
-        date_from = "2023-01-01"
+    if (date_from == None) or (date_to == None): 
+        year = date.year()       
+        date_from = year + "-01-01"
         date_to = date.today()
         return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=None)
     else:
