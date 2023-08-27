@@ -106,6 +106,7 @@ def inspect_by_date():
         SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE date BETWEEN ? and ?
+        ORDER BY date ASC
         """
         cur.execute(sql, (date_from, date_to))
         rew=cur.fetchall()    
