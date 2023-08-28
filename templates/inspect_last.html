@@ -11,10 +11,10 @@
 	{% for (date, hive_id, state, interv, frames, note) in review %}
 		<p>{{ hive_id }}</p>
 		<p style="color: #336699">{{ date }}</p>
-    <p>{{ state }}</p>  
-    <p>{{ interv }}</p>
-    <p>{{ frames }}</p>
-    <p>{{ note }}</p>
+    <p>Ст: {{ state }}</p>  
+    <p>Ин: {{ interv }}</p>
+    <p>РР: {{ frames }}</p>
+    <p>Но: {{ note }}</p>
 		<br />
     <br />
 	{% endfor %}	
