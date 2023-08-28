@@ -5,11 +5,10 @@
   <h1>Прегледи - сви</h1>
 	
 	{% set xdate = null %}	
-	{% for (date, hive_id, state, interv, frames, note) in review %}		
-		{% if xdate != date %}			
+	{% for (date, hive_id, state, interv, frames, note) in review %}	
+		{% if xdate != date %}
+			{% set xdate = date %}
 			<b><p style="color: #336699">{{ date }}</p></b>
-			<b><p style="color: #336699">{{ xdate }}</p></b>
-			{% set xdate = date %}					
 		{% endif %}
 		<p>Кошница бр: {{ hive_id }}</p>
 		<p>Ст: {{ state }}</p>  
