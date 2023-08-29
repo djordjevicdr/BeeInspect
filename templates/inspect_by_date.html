@@ -19,6 +19,7 @@
 	{% for (date, hive_id, state, interv, frames, note) in review %}
 		{% if date not in difdate %}
 			<p style="color: #336699;"><b>{{ date }}</b></p>
+      <br />
 			{% if difdate.append(date) %} {% endif %}
 		{% endif %}
 		<p><b>{{ hive_id }}</b></p>
@@ -27,6 +28,7 @@
 	  <p><span class="vst">РР: </span>{{ frames }}</p>
 	  <p><span class="vst">Но: </span>{{ note }}</p> 
 		<br>
+    <br>
 	{% endfor %}
 {% endif %}	
 
