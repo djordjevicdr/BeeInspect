@@ -14,6 +14,10 @@ p {
   margin-bottom: 2px;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* Header/logo Title */
 .header {
   padding: 20px;
@@ -174,6 +178,12 @@ p {
     display:inline;
     margin-right: 75px;    
   }
+
+  .vst {
+    color: #a00000; 
+    font-weight: 600; 
+    font-family: 'Courier New', Courier, monospace;  
+  }
   
   
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -215,7 +225,21 @@ p {
 
 .shemaid {
   text-decoration: none;
-  color: royalblue;
+  color: #0000EE;
+}
+
+/* table */
+table.tshema {
+  border-collapse: separate;
+  border-spacing: 10px 40px;    
+  width: 100%;
+}
+
+table.tshema td {
+  border: 1px solid black;  
+  padding: 10px;  
+  text-align: center;
+  border-spacing: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -238,18 +262,12 @@ p {
     text-align: left;
   }
   .shema {flex-direction: column;}
+
+  table.tshema td {    
+    padding: 5px;   
+    border-spacing: 10px;
+  }
 }
 
-/* table */
-table.tshema {
-  border-collapse: separate;
-  border-spacing: 10px 40px;    
-  width: 100%;
-}
 
-table.tshema td {
-  border: 1px solid black;  
-  padding: 10px;  
-  text-align: center;
-  border-spacing: 20px;
-}
+

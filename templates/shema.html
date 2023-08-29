@@ -1,10 +1,8 @@
 {% extends 'template.html' %}
 
 {% block content %}
-{% autoescape off %}
-<h1 style="text-align: center;">
-  Пчелињак
-</h1>
+
+<h1>Пчелињак - шема</h1>
 
 <div class="shema">
   <div style="flex: 70%;">
@@ -29,24 +27,19 @@
       {% endfor %} 
     </table>
   </div>
-  <div style="flex: 30%; padding-left: 15px;">
-    <h2>Прегледи:</h2>
+  <div style="flex: 30%; padding-left: 15px;">    
     {% if review != None %}      
       <p><b>Кошница БР. {{ hive_id }}</b></p>
       <br>
       {% for (date, hive_id, state, interv, frames, note) in review %}    
         <p style="color: #336699">{{ date }}</p>
-        <p>Ст: {{ state }}</p>  
-        <p>Ин: {{ interv }}</p>
-        <p>РР: {{ frames }}</p>
-        <p>Но: {{ note }}</p> 
+        <p><span class="vst">Ст: </span>{{ state }}</p>
+	      <p><span class="vst">Ин: </span>{{ interv }}</p>
+	      <p><span class="vst">РР: </span>{{ frames }}</p>
+	      <p><span class="vst">Но: </span>{{ note }}</p> 
         <br>  
       {% endfor %}
     {% endif %}	
   </div>
-
 </div>
-		
-
-{% endautoescape %}
 {% endblock content %}

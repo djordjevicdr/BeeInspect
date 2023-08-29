@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>Преглед - ID</h1>
+
 <form>
   <label for="hive_id">Кошница бр.</label>
   <input type="text" name="hive_id" id="hive_id" {% if hive_id != None %} value="{{ hive_id }}" {% endif %} /> 
@@ -15,10 +17,10 @@
   <br>
   {% for (date, hive_id, state, interv, frames, note) in review %}    
     <p style="color: #336699">{{ date }}</p>
-    <p>Ст: {{ state }}</p>  
-    <p>Ин: {{ interv }}</p>
-    <p>РР: {{ frames }}</p>
-    <p>Но: {{ note }}</p>
+    <p><span class="vst">Ст: </span>{{ state }}</p>
+	  <p><span class="vst">Ин: </span>{{ interv }}</p>
+	  <p><span class="vst">РР: </span>{{ frames }}</p>
+	  <p><span class="vst">Но: </span>{{ note }}</p> 
     <br>  
   {% endfor %}
 {% endif %}	

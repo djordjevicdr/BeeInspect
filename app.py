@@ -21,9 +21,8 @@ def inspect_all():
     """
     cur.execute(sql)
     rew=cur.fetchall()    
-    con.close()
-    nasl="Прегледи"
-    return render_template("inspect_all.html", naslov=nasl, review=rew)
+    con.close()    
+    return render_template("inspect_all.html", review=rew)
 
 @app.route("/inspect_last")
 def inspect_last():
@@ -45,9 +44,8 @@ def inspect_last():
     """
     cur.execute(sql)
     rew=cur.fetchall()    
-    con.close()
-    nasl="Последњи преглед"
-    return render_template("inspect_last.html", naslov=nasl, review=rew)
+    con.close()    
+    return render_template("inspect_last.html", review=rew)
 
 @app.route("/inspect_by_id")
 def inspect_by_id():
