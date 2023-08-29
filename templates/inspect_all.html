@@ -6,7 +6,7 @@
 	
 	{% set xdate = null %}	
 	{% for (date, hive_id, state, interv, frames, note) in review %}	
-		{% if xdate != date %}			
+		{% if xdate != date.strftime('%Y-%m-%d') %}			
 			<p style="color: #336699"><b>{{ date }}</b></p>
 			{% set xdate = date.strftime('%Y-%m-%d') %}
 			<p style="color: #336699"><b>{{ xdate }}</b></p>			
