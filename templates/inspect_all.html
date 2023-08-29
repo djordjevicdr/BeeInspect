@@ -4,14 +4,14 @@
   
   <h1>Прегледи - сви</h1>
 	
-	{% set xdate = "2023-01-01" %}
-	{% set xdate = "2023-11-11" %}
+	{% set difdate = [] %}
+	
 	{% for (date, hive_id, state, interv, frames, note) in review %}	
-		{% if xdate != date %}			
-			<p style="color: #336699"><b>{{ date }}</b></p>			
-			<p style="color: #336699"><b>{{ xdate }}</b></p>			
+		{% if date not in difdate %}			
+			<p style="color: #336699; text-align: center"><b>{{ date }}</b></p>			
+			{% if difdate.append(date) %} {% endif %}
 		{% endif %}
-		<p>Кошница бр: {{ hive_id }}</p>
+		<p><b>{{ hive_id }}</b></p>
 		<p>Ст: {{ state }}</p>  
 		<p>Ин: {{ interv }}</p>
 		<p>РР: {{ frames }}</p>
