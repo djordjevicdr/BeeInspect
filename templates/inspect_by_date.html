@@ -4,25 +4,28 @@
 
 
 <form>
-  <label for="date_from">Датум ОД</label>
-  <input type="date" name="date_from" id="date_from" value="{{ date_from }}" required />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <label for="date_to">Датум ДО</label>
-  <input type="date" name="date_to" id="date_to" value="{{ date_to }}" required />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label for="date_from">Датум ОД</label>&nbsp;&nbsp;
+  <input type="date" name="date_from" id="date_from" value="{{ date_from }}" required /><br />
+  <label for="date_to">Датум ДО</label>&nbsp;&nbsp;
+  <input type="date" name="date_to" id="date_to" value="{{ date_to }}" required /><br />
   <input type="submit" value="Прикажи" />  
 </form>
 
 {% if review != None %}
-<br />
-<table class="nice-table">	
-  <tr>
-    <th width="10%">Датум</th><th width="5%">К БР</th><th width="25%">Стање</th><th width="25%">Интервенција</th><th width="15%">Распоред рамова</th><th width="20%">Напомена</th>
-  </tr>
-  {% for (date, hive_id, state, interv, frames, note) in review %}
-			<tr>
-				<td>{{ date }}</td><td>{{ hive_id }}</td><td>{{ state }}</td><td>{{ interv }}</td><td>{{ frames }}</td><td>{{ note }}</td>
-			</tr>
-	{% endfor %} 
-</table>	
+  {% set difdate = [] %}
+	
+	{% for (date, hive_id, state, interv, frames, note) in review %}
+		{% if date not in difdate %}
+			<p style="color: #336699; text-align: center"><b>{{ date }}</b></p>
+			{% if difdate.append(date) %} {% endif %}
+		{% endif %}
+		<p><b>{{ hive_id }}</b></p>
+		<p>Ст: {{ state }}</p>
+		<p>Ин: {{ interv }}</p>
+		<p>РР: {{ frames }}</p>
+		<p>Но: {{ note }}</p> 
+		<br>
+	{% endfor %}
 {% endif %}	
 
 {% endblock content %}

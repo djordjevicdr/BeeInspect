@@ -6,17 +6,17 @@
 	
 	{% set difdate = [] %}
 	
-	{% for (date, hive_id, state, interv, frames, note) in review %}	
-		{% if date not in difdate %}			
-			<p style="color: #336699; text-align: center"><b>{{ date }}</b></p>			
+	{% for (date, hive_id, state, interv, frames, note) in review %}
+		{% if date not in difdate %}
+			<p style="color: #336699; text-align: center"><b>{{ date }}</b></p>
 			{% if difdate.append(date) %} {% endif %}
 		{% endif %}
 		<p><b>{{ hive_id }}</b></p>
-		<p>Ст: {{ state }}</p>  
+		<p>Ст: {{ state }}</p>
 		<p>Ин: {{ interv }}</p>
 		<p>РР: {{ frames }}</p>
 		<p>Но: {{ note }}</p> 
-		<br>		 		
-	{% endfor %}	
+		<br>
+	{% endfor %}
 
 {% endblock content %}

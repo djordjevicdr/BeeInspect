@@ -1,12 +1,9 @@
 {% extends 'template.html' %}
 
 {% block content %}
-{% autoescape off %}
-
   {% if naslov %}
     <h1>{{naslov}}</h1>
-  {% endif%}
-		
+  {% endif%}		
 
 	{% for (date, hive_id, state, interv, frames, note) in review %}
 		<p>{{ hive_id }}</p>
@@ -17,7 +14,6 @@
     <p>Но: {{ note }}</p>
 		<br />
     <br />
-	{% endfor %}	
+	{% endfor %}
 
-{% endautoescape %}
 {% endblock content %}
