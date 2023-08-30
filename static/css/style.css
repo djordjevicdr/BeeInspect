@@ -261,7 +261,12 @@ table.tshema td {
     width: 100%;
     text-align: left;
   }
+
   .shema {flex-direction: column;}
+
+  table.tshema {    
+    border-spacing: 5px 30px;    
+  }
 
   table.tshema td {    
     padding: 3px;   
