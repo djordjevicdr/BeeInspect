@@ -84,6 +84,7 @@ def shema():
         SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE hive_id=?
+        ORDER BY date DESC
         """
         cur.execute(sql, (hive_id,))
         rew=cur.fetchall()    
@@ -109,7 +110,7 @@ def inspect_by_date():
         SELECT date, hive_id, state, interv, frames, note
         FROM inspect   
         WHERE date BETWEEN ? and ?
-        ORDER BY date ASC
+        ORDER BY date DESC
         """
         cur.execute(sql, (date_from, date_to))
         rew=cur.fetchall()    
