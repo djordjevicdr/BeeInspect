@@ -24,7 +24,7 @@
     <a href="/inspect_by_date">Преглед - ОдДо</a>
     <a href="/inspect_last">Преглед - последњи</a>        
     <a href="/shema">Пчелињак - шема</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="hamburg" onclick="myFunction()"><i id="fa-btn" class="fa fa-bars" style="font-weight: 900;"></i></a>   
+    <a href="javascript:void(0);" class="hamburg" onclick="myFunction()"><i id="fa-btn" class="fa fa-bars"></i></a>   
 </div>
 
 <!-- The flexible grid (content) -->
@@ -72,11 +72,11 @@
       }
 
       var y = document.getElementById("fa-btn");
-      if(y.className === "fa-solid fa-bars"){
-        y.className = "fa-solid fa-xmark";
+      if(y.className === "fa fa-bars"){
+        y.className = "fa fa-xmark";
       }
       else{
-        y.className = "fa-solid fa-bars";
+        y.className = "fa fa-bars";
       }
     }    
 </script>
