@@ -48,7 +48,7 @@ h1 {
   font-size: 15px;
 }
 
-.active {  
+.home {  
   color: white;
 }
 
@@ -192,7 +192,7 @@ h1 {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
-  .topnav a.icon {
+  .topnav a.hamburg {
     float: right;
     display: block;
   }
@@ -254,6 +254,15 @@ table.tshema td {
     display: block;
     text-align: left;
   }
+
+  .topnav a.hamburg, a.home {
+    text-decoration: none;
+    text-shadow: none;
+
+    font-size: 20px;
+    color: #fff;
+  }
+
   .topnav.responsive .dropdown {float: none;}
   .topnav.responsive .dropdown-content {position: relative;}
   .topnav.responsive .dropdown .dropbtn {
