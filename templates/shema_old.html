@@ -7,23 +7,20 @@
 <div class="shema">
   <div style="flex: 70%;">
     <table class="tshema">			
-      {% for i in range(5) %}
+      {% for i in ["5", "4", "3", "2", "1"] %}
         <tr>
-          {% for j in range(12) %}
+          {% for j in ["1", "2", "3", "4", " ", "5", "6", "7", " ", "8", "9", "A"] %}
             
-            {% if shema[i][j][0] !="  " %}
+              {% if j !=" " %}
               <td>
-                {% if shema[i][j][1] %}
-                  <a class="shemaid" href="shema?hive_id={{ shema[i][j][0] }}">
-                {% else %}
-                  <a class="shemaid_na" href="shema?hive_id={{ shema[i][j][0] }}">
-                {% endif%}
-                <b>{{ shema[i][j][0] }}</b>
+                <a class="shemaid" href="shema?hive_id={{ i+j }}">
+                  <b>{{ i+j }}</b>
                 </a>
-              </td>              
-            {% else %}
+              </td>
+              {% endif %}  
+              {% if j ==" " %}
                 <td style="border: 0;"></td>
-            {% endif %}            
+              {% endif %}            
             
           {% endfor %}
         </tr>
