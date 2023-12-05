@@ -31,7 +31,7 @@
     {% if review != None %}      
       <p><b>Кошница БР. {{ hive_id }}</b></p>
       <br>
-      {% for (date, hive_id, state, interv, frames, note) in review %}    
+      {% for (date, hive_id, interv, state, frames, note) in review %}    
         <p style="color: #336699">{{ date }}</p>        
 	      <p><span class="vst">Ин: </span>{{ interv }}</p>
         <p><span class="vst">Ст: </span>{{ state }}</p>

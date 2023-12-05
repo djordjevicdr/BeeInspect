@@ -6,7 +6,7 @@
 	
 	{% set difdate = [] %}
 	
-	{% for (date, hive_id, state, interv, frames, note) in review %}
+	{% for (date, hive_id, interv, state, frames, note) in review %}
 		{% if date not in difdate %}
 			<p style="color: #336699;"><b>{{ date }}</b></p>
 			{% if difdate.append(date) %} {% endif %}

@@ -4,7 +4,7 @@
   
   <h1>Преглед - последњи</h1>
 
-	{% for (hive_id, date, state, interv, frames, note) in review %}
+	{% for (hive_id, date, interv, state, frames, note) in review %}
     <p><b>{{ hive_id }}</b></p>
 		<p style="color: #336699">{{ date }}</p>    
 	  <p><span class="vst">Ин: </span>{{ interv }}</p>
