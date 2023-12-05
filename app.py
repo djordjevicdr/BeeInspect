@@ -15,7 +15,7 @@ def inspect_all():
     cur = con.cursor()  
     
     sql="""
-    SELECT date, hive_id, state, interv, frames, note
+    SELECT date, hive_id, interv, state, frames, note
     FROM inspect   
     ORDER BY date DESC
     """
@@ -31,7 +31,7 @@ def inspect_last():
     cur = con.cursor()  
     
     sql="""
-    SELECT I.hive_id, I.date, I.state, I.interv, I.frames, I.note
+    SELECT I.hive_id, I.date, I.interv, I.state, I.frames, I.note
     FROM inspect AS I
     JOIN
     (
@@ -59,7 +59,7 @@ def inspect_by_id():
         return render_template("inspect_by_id.html", hive_id=None, review=None)
     else:
         sql="""
-        SELECT date, hive_id, state, interv, frames, note
+        SELECT date, hive_id, interv, state, frames, note
         FROM inspect   
         WHERE hive_id=?
         ORDER BY date DESC
@@ -101,10 +101,10 @@ def shema():
         return render_template("shema.html", hive_id=None, review=None, shema=shema)
     else:
         sql="""
-        SELECT date, hive_id, state, interv, frames, note
+        SELECT date, hive_id, interv, state, frames, note
         FROM inspect   
         WHERE hive_id=?
-        ORDER BY date DESC
+        ORDER BY date DESC, id DESC
         """
         cur.execute(sql, (hive_id,))
         rew=cur.fetchall()    
@@ -127,7 +127,7 @@ def inspect_by_date():
         return render_template("inspect_by_date.html", date_from=date_from, date_to=date_to, review=None)
     else:
         sql="""
-        SELECT date, hive_id, state, interv, frames, note
+        SELECT date, hive_id, interv, state, frames, note
         FROM inspect   
         WHERE date BETWEEN ? and ?
         ORDER BY date DESC
@@ -148,17 +148,17 @@ def inspect_add():
             cur = con.cursor()
 
             sql="""
-            INSERT INTO inspect (date, hive_id, state, interv, frames, note)
-            VALUES(?,?,?,?,?)
+            INSERT INTO inspect (date, hive_id, interv, state, frames, note)
+            VALUES(?,?,?,?,?,?)
             """            
             date = request.form['date']
-            hive_id = request.form['hive_id']
-            state = request.form['state']
+            hive_id = request.form['hive_id']            
             interv = request.form['interv']
+            state = request.form['state']
             frames = request.form['frames']
             note = request.form['note']        
 
-            cur.execute(sql, (date, hive_id, state, interv, frames, note))
+            cur.execute(sql, (date, hive_id, interv, state, frames, note))
             con.commit()
             _msg="Успешан упис"
             return render_template("inspect_add.html", msg=_msg)     
