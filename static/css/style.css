@@ -7,6 +7,16 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
+
+  background-color: #ddd;
+}
+
+.wrapper{
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1350px;
+  justify-content: center;
 }
 
 p {
@@ -41,15 +51,27 @@ h1 {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #cfcfcf;;
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
+  text-shadow: 1px 1px #000000;
   font-size: 15px;
+  font-weight: 500;
+}
+
+.topnav > a:hover {
+  color:#fff;    
+}
+
+.topnav a.split {
+  float: right;
+  padding: 10px 0px;
+  margin-right: 0px;  
 }
 
 .home {  
-  color: white;
+  color: white;  
 }
 
 .topnav .hamburg {
@@ -90,7 +112,7 @@ h1 {
   text-align: left;
 }
 
-.topnav a:hover, .dropdown:hover .dropbtn {
+.topnav .dropdown:hover .dropbtn {  /*a:hover,*/
   background-color: #555;
   color: white;
 }
@@ -246,6 +268,56 @@ table.tshema td {
   text-align: center;
   border-spacing: 20px;
 }
+
+/*Login form*/
+
+form.cont-log {
+  /*border-radius: 5px;*/
+  /*background-color: #f2f2f2;*/
+  /*padding: 20px;*/  
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+form.cont-log a {
+  text-decoration: none;
+  color: #00A0A0
+}
+
+form.cont-log a:hover {
+  color: #00A0A0;
+  text-decoration: underline;
+}
+
+form.cont-log input[type=text], input[type=email], input[type=password], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /*border-radius: 4px;*/
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: var(--fontsize);
+  color: var(--fontcolor);
+}
+
+form.cont-log input[type=submit] {
+  background-color: #00A0A0;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+form.cont-log input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+/* media */
 
 @media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}

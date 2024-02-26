@@ -165,3 +165,11 @@ def inspect_add():
         except Exception as e:
             _msg = 'Грешка: {}'.format(str(e))
             return render_template("inspect_add.html", msg=_msg)
+        
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
