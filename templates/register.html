@@ -2,23 +2,18 @@
 {% block content %}
   <h2 style="margin-bottom: 20px;">Пријавите се</h2>
   <form class="cont-log" action="#" method="post">
+    <label for="firstname">Име</label>
+    <input name="firstname" placeholder="Име" required>
+
+    <label for="lastname">Име</label>
+    <input name="lastname" placeholder="Презиме" required>
+
     <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;eMail</label>
     <input type="email" name="email" placeholder="Адреса ваше електронске поште" required>
 
     <label for="psw"><i class="fa-solid fa-lock"></i>&nbsp;Лозинка</label>
     <input type="password" name="psw" placeholder="Унесите лозинку" required>
   
-    <input type="submit" value="Пријава">
-    <br>
-    <br>
-
-    <label style="display: block; text-align: center;">
-      Нисте регистровани корисник?&nbsp;<a href="#">Пријавите се сада</a>
-    </label>    
-    <br>    
-
-    <label style="display: block; text-align: center;">
-      <a href="#">Заборављена лозинка</a>
-    </label>
+    <input type="submit" value="Пријава">    
   </form>
 {% endblock content %}
