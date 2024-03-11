@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr">
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="static/css/style.css">
-<link rel="stylesheet" href="static/css/nice_table.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/nice_table.css">
+  <script type="text/javascript" src="static/script/functions.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-language" content="sr" />
 </head>
 <body>
 
@@ -20,19 +22,38 @@
 <div class="wrapper">
 <div class="topnav" id="myTopnav">
     <a href="/" class="home" style="padding-left: 0;"><i class="fa fa-home"></i></a>
-    <a href="/inspect_add">Преглед - нови</a>
-    <a href="/inspect_all">Преглед - сви</a>
-    <a href="/inspect_by_id">Преглед - ID</a>
-    <a href="/inspect_by_date">Преглед - ОдДо</a>
-    <a href="/inspect_last">Преглед - последњи</a>        
-    <a href="/shema">Пчелињак - шема</a>
-    <a href="/login" class="split"><i class="fa fa-sign-in"></i>&nbsp;Пријава</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Прегледи&nbsp;&nbsp;<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="/inspect_add">Преглед - нови</a>       
+        <a href="/inspect_by_date">Преглед - Од До</a>
+        <a href="/inspect_last">Преглед - последњи</a>
+        <a href="/shema">Пчелињак - шема</a>        
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Пчелињаци&nbsp;&nbsp;<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="/apiary_add">Пчелињак - нови</a>
+        <a href="/apiary_add">Пчелињак - преглед</a>       
+      </div>
+    </div>
+
+    <a href="/">Блог</a>
+   
+    {% if session.get('loggedin') %}
+      <a href="/logout" class="split">{{session.get('username')}}&nbsp;<i class="fa fa-sign-out"></i></a>
+    {% else %}
+      <a href="/login" class="split"><i class="fa fa-sign-in"></i>&nbsp;Пријава</a>
+    {% endif %}       
     <a href="javascript:void(0);" class="hamburg" onclick="myFunction()"><i id="fa-btn" class="fa fa-bars"></i></a>   
 </div>
 </div>
 </div>
 
-<!-- The flexible grid (content) -->
+<!-- C O N T E N T -->
 <div class="wrapper">
 <div class="row">
   
@@ -50,7 +71,13 @@
     <p>Lorem ipsum dolor sit ame.</p>
     <div class="fakeimg" style="height:60px;">Image</div><br>
     <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
   </div>
 
 </div>

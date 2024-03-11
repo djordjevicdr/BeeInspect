@@ -300,28 +300,28 @@ table.tshema td {
   border-spacing: 20px;
 }
 
-/* F o r m s */
+/*Login form*/
 
-form {
+form.cont-log {
   /*border-radius: 5px;*/
   /*background-color: #f2f2f2;*/
   /*padding: 20px;*/  
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-form a {
+form.cont-log a {
   text-decoration: none;
   color: #00A0A0
 }
 
-form a:hover {
+form.cont-log a:hover {
   color: #00A0A0;
   text-decoration: underline;
 }
 
-form input[type=text], input[type=email], input[type=password], input[type=date], select, textarea {
+form.cont-log input[type=text], input[type=email], input[type=password], select, textarea {
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px;
   border: 1px solid #ccc;
   /*border-radius: 4px;*/
   box-sizing: border-box;
@@ -339,10 +339,6 @@ form.cont-log input[type=submit]:hover {
   opacity: 0.8;
 }
 */
-
-.div-split {
-  display: block;
-}
 
 /* media */
 
@@ -384,14 +380,6 @@ form.cont-log input[type=submit]:hover {
   table.tshema td {    
     padding: 3px;   
     border-spacing: 7px;
-  }
-
-  .div-split {
-    display: none;
-  }
-
-  form input[type=text], input[type=email], input[type=password], input[type=date], select, textarea {
-    width: 100%;
   }
 }
 

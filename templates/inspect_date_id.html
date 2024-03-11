@@ -1,0 +1,17 @@
+{% extends 'inspect_date.html' %}
+
+{% block databee %}
+
+{% if databee != None %}
+  <h2 style="text-align: center;">Кошница БР. {{ hive_id }}</h2>  
+  {% for (date, hive_id, interv, state, frames, note) in databee %}    
+    <p style="color: #336699">{{ date }}</p>	  
+    <p><span class="vst">Ст: </span>{{ state }}</p>
+    <p><span class="vst">Ин: </span>{{ interv }}</p>
+	  <p><span class="vst">РР: </span>{{ frames }}</p>
+	  <p><span class="vst">Но: </span>{{ note }}</p> 
+    <br>  
+  {% endfor %}
+{% endif %}	
+
+{% endblock databee %}

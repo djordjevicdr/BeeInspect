@@ -1,19 +1,34 @@
-{% extends 'template.html' %}
+{% extends 'base.html' %}
+
 {% block content %}
-  <h2 style="margin-bottom: 20px;">Пријавите се</h2>
-  <form class="cont-log" action="#" method="post">
-    <label for="firstname">Име</label>
-    <input name="firstname" placeholder="Име" required>
 
-    <label for="lastname">Име</label>
-    <input name="lastname" placeholder="Презиме" required>
+<h2 style="margin-bottom: 20px;">Креирање налога</h2>
+<form method="POST">
+  <label for="firstname">Име</label>
+  <input type="text" name="firstname" id="firstname" placeholder="Ваше име" required>
 
-    <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;eMail</label>
-    <input type="email" name="email" placeholder="Адреса ваше електронске поште" required>
+  <label for="lastname">Презиме</label>
+  <input type="text" name="lastname" id="lastname" placeholder="Ваше презиме" required>
 
-    <label for="psw"><i class="fa-solid fa-lock"></i>&nbsp;Лозинка</label>
-    <input type="password" name="psw" placeholder="Унесите лозинку" required>
+  <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;eMail</label>
+  <input type="email" name="email" id="email" placeholder="Адреса ваше електронске поште" required>
+
+  <label for="password"><i class="fa-solid fa-lock"></i>&nbsp;Лозинка</label>
+  <input type="password" name="password" id="password" placeholder="Унесите лозинку" required>
   
-    <input type="submit" value="Пријава">    
-  </form>
+  <input type="submit" value="Сачувај">
+</form>
+
+{% if msg %}
+  <h2>{{msg}}</h2>
+{% endif %}
+
+{% if succ %}
+  <script>
+    setTimeout(function() {
+      window.location.href = "/";
+    }, {{ timeout }});
+  </script>
+{% endif %}
+
 {% endblock content %}

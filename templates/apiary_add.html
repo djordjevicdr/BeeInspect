@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Пчелињак - нови</h1>
+<form method="POST">  
+  <label for="name">Назив</label>
+  <br>
+  <input type="text" name="name" id="name" style="width: 100%" required>
+  <br>
+  <br>
+  <label for="location">Место</label>
+  <br>
+  <input type="text" name="location" id="location" style="width: 100%" required>
+  <br>
+  <br>
+  <label for="name">Адреса</label>
+  <br>
+  <input type="text" name="address" id="address" style="width: 100%" required>
+  <br>
+  <br>
+  <label for="description">Опис</label>
+  <br>
+  <textarea name="description" id="description" style="width: 100%" rows="2" required></textarea>
+  <br>  
+  <br>
+  <input type="submit" value="Упиши податке">
+</form>
+
+{% if msg %}
+<h2>{{msg}}</h2>
+{% endif %}
+
+{% if succ %}
+  <script>
+    setTimeout(function() {
+      window.location.href = "/";
+    }, {{ timeout }});
+  </script>
+{% endif %}
+
+{% endblock content %}

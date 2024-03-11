@@ -1,4 +1,4 @@
-{% extends 'template.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -31,13 +31,13 @@
     </table>
   </div>
   <div style="flex: 30%; padding-left: 15px;">    
-    {% if review != None %}      
+    {% if databee != None %}      
       <p><b>Кошница БР. {{ hive_id }}</b></p>
       <br>
-      {% for (date, hive_id, interv, state, frames, note) in review %}    
-        <p style="color: #336699">{{ date }}</p>        
-	      <p><span class="vst">Ин: </span>{{ interv }}</p>
+      {% for (date, hive_id, interv, state, frames, note) in databee %}    
+        <p style="color: #336699">{{ date }}</p>	      
         <p><span class="vst">Ст: </span>{{ state }}</p>
+        <p><span class="vst">Ин: </span>{{ interv }}</p>
 	      <p><span class="vst">РР: </span>{{ frames }}</p>
 	      <p><span class="vst">Но: </span>{{ note }}</p> 
         <br>  

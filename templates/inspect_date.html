@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Преглед - Од До</h1>
+
+<form method="GET" action="/inspect_by_date">
+	<label for="apiary">Пчелињак</label>
+  <select name="apiary_id" id="apiary_id" required>
+	  {% for id, name in apiary %}    
+      {% if id == apiary_id %}
+        <option value="{{ id }}" selected>{{ name }}</option>
+      {% else %}
+        <option value="{{ id }}">{{ name }}</option>
+      {% endif %}      
+      <!-- radi, ali editor javlja gresku kod == na drugom =
+      <option value="{{ id }}" {% if id == apiary_id %} selected {% endif %}>{{ name }}</option>
+      -->
+    {% endfor %}
+	</select>
+	<label for="hive_id">Кошница Бр.</label><br>
+  <input type="text" name="hive_id" id="hive_id" value="{{ hive_id }}" style="width: 100%;"/>   
+  <label for="date_from">Датум ОД</label><br>
+  <input type="date" name="date_from" id="date_from" value="{{ date_from }}" required />    
+  <label for="date_to">Датум ДО</label><br>
+  <input type="date" name="date_to" id="date_to" value="{{ date_to }}" required />    
+  <input type="submit" value="Прикажи" />
+</form>
+
+{% block databee %}
+
+{% endblock databee %}
+
+
+{% endblock content %}

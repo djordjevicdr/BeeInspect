@@ -1,24 +1,42 @@
-{% extends 'template.html' %}
+{% extends 'base.html' %}
 {% block content %}
-  <h2 style="margin-bottom: 20px;">Пријавите се</h2>
-  <form class="cont-log" action="#" method="post">
-    <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;eMail</label>
-    <input type="email" name="email" placeholder="Адреса ваше електронске поште" required>
 
-    <label for="psw"><i class="fa-solid fa-lock"></i>&nbsp;Лозинка</label>
-    <input type="password" name="psw" placeholder="Унесите лозинку" required>
+<h2 style="margin-bottom: 20px;">Пријавите се</h2>
+
+<form method="POST">
+  <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;eMail</label>
+  <input type="email" name="email" id="email" placeholder="Адреса ваше електронске поште" required>
+
+  <label for="password"><i class="fa-solid fa-lock"></i>&nbsp;Лозинка</label>
+  <input type="password" name="password" id="password" placeholder="Унесите лозинку" required>
   
-    <input type="submit" value="Пријава">
-    <br>
-    <br>
+  <input type="submit" value="Пријава">
+  <br>
+  <br>
 
-    <label style="display: block; text-align: center;">
-      Нисте регистровани корисник?&nbsp;<a href="#">Пријавите се овде</a>
-    </label>    
-    <br>    
+  <label style="display: block; text-align: center;">
+    Нисте регистровани корисник?&nbsp;<a href="/register">Пријавите се овде</a>
+  </label>    
+  <br>    
 
-    <label style="display: block; text-align: center;">
-      <a href="/register">Заборављена лозинка</a>
-    </label>
-  </form>
+  <label style="display: block; text-align: center;">
+    <a href="/register">Заборављена лозинка</a>
+  </label>
+</form>
+
+{% if msg %}
+  <h2>{{msg}}</h2>
+{% endif %}
+
+{% if succ %}
+  <script>
+    setTimeout(function() {
+      window.location.href = "/";
+    }, {{ timeout }});
+  </script>
+{% endif %}
+
 {% endblock content %}
+
+
+
